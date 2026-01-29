@@ -62,15 +62,17 @@ const filteredShows = allShows.filter((show) =>
 ```
 
 This computation runs:
--On every keystroke
--On every render
--Even when unrelated state changes
+
+- On every keystroke
+- On every render
+- Even when unrelated state changes
 
 User Impact
--Typing feels laggy
--UI becomes unresponsive under load
--CPU usage spikes
--Poor perceived performance
+
+- Typing feels laggy
+- UI becomes unresponsive under load
+- CPU usage spikes
+- Poor perceived performance
 
 This mirrors what happens in many production apps before optimization.
 
@@ -90,9 +92,10 @@ const deferredQuery = useDeferredValue(query);
 ```
 
 This allows:
--Immediate UI updates for input
--Background processing for expensive filtering
--Improved perceived responsiveness
+
+- Immediate UI updates for input
+- Background processing for expensive filtering
+- Improved perceived responsiveness
 
 ### 4.2 Memoized Computation (useMemo)
 
@@ -110,8 +113,9 @@ const filteredShows = useMemo(() => {
 ```
 
 This ensures:
--Filtering only runs when data or query changes
--Unrelated renders do not trigger expensive work
+
+- Filtering only runs when data or query changes
+- Unrelated renders do not trigger expensive work
 
 ## 5. Optimized Implementation
 
@@ -122,10 +126,11 @@ src/components/optimized/ShowRow.tsx
 ```
 
 Improvements Achieved
--Smooth typing experience
--Reduced unnecessary re-renders
--Stable UI under load
--Clear performance contrast vs baseline
+
+- Smooth typing experience
+- Reduced unnecessary re-renders
+- Stable UI under load
+- Clear performance contrast vs baseline
 
 The optimized version maintains the same UI and data but significantly improves interaction quality.
 
@@ -136,49 +141,53 @@ Carousel-Based Row
 Instead of rendering all items in a free-scrolling container, the optimized version uses a controlled carousel.
 
 Benefits:
--Clear visual focus
--Reduced perceived clutter
--Predictable rendering behavior
--Improved interaction affordance
--This approach improves UX while indirectly reducing rendering pressure.
+
+- Clear visual focus
+- Reduced perceived clutter
+- Predictable rendering behavior
+- Improved interaction affordance
+- This approach improves UX while indirectly reducing rendering pressure.
 
 ## 7. Why Virtualization Was Deferred
 
 Virtualization (e.g., react-window) was evaluated as a next optimization step.
 
 It was intentionally deferred to:
--Keep the demo stable and focused
--Avoid unnecessary tooling complexity
--Preserve clarity of performance improvements
--Virtualization is listed as a future improvement rather than a forced inclusion.
+
+- Keep the demo stable and focused
+- Avoid unnecessary tooling complexity
+- Preserve clarity of performance improvements
+- Virtualization is listed as a future improvement rather than a forced inclusion.
 
 ## 8. Key Learnings
 
--Performance issues are often architectural, not visual
--Measuring perceived performance is as important as raw speed
--Optimizations should be incremental and explainable
--Clean separation between baseline and optimized code improves understanding
+- Performance issues are often architectural, not visual
+- Measuring perceived performance is as important as raw speed
+- Optimizations should be incremental and explainable
+- Clean separation between baseline and optimized code improves understanding
 
 ## 9. Real-World Relevance
 
 The patterns demonstrated in MirageFlix directly apply to:
--Search-heavy UIs
--Media browsing platforms
--Dashboards with large datasets
--Any React app experiencing sluggish input or rendering
+
+- Search-heavy UIs
+- Media browsing platforms
+- Dashboards with large datasets
+- Any React app experiencing sluggish input or rendering
 
 ## 10. Future Improvements
 
--Virtualized rows for extremely large datasets
--Server-side pagination
--Image loading & caching strategies
--Performance benchmarks and metrics
+- Virtualized rows for extremely large datasets
+- Server-side pagination
+- Image loading & caching strategies
+- Performance benchmarks and metrics
 
 ## 11. Final Notes
 
 MirageFlix is intentionally designed as a learning and demonstration tool, not a production streaming app.
 
 The emphasis is on:
--Understanding performance tradeoffs
--Writing explainable optimizations
--Building intuition for responsive UI design
+
+- Understanding performance tradeoffs
+- Writing explainable optimizations
+- Building intuition for responsive UI design
