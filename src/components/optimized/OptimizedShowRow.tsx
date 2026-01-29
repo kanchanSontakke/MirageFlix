@@ -71,6 +71,18 @@ export default function OptimizedShowRow({ query = "" }: Props) {
           zIndex: 2,
         },
 
+        control: {
+          backgroundColor: "transparent",
+          border: "none",
+          boxShadow: "none",
+          color: "#fff",
+
+          "&:hover": {
+            backgroundColor: "transparent",
+            color: "#8A2BE2", // KS accent
+          },
+        },
+
         indicator: {
           display: "none",
         },
