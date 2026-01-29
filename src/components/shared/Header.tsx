@@ -1,4 +1,5 @@
 import { Text, NavLink, Container, Group } from "@mantine/core";
+import Logo from "../../assets/Logo.svg";
 
 export default function AppHeader() {
   return (
@@ -10,7 +11,7 @@ export default function AppHeader() {
           c="violet.4"
           aria-label="MirageFlix logo"
         >
-          MirageFlix
+          <img src={Logo} alt="MirageFlix Logo" className="w-36" />
         </Text>
 
         <nav aria-label="Primary navigation" className="hidden md:block">
