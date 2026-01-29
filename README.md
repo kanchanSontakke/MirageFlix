@@ -104,5 +104,5 @@ MirageFlix focuses on intentional slowness first, followed by measured optimizat
 
 ## 👤 Author
 
-Built by **KS**  
+Built by **Kanchan Sontakke**  
 Frontend Engineer • React Specialist
