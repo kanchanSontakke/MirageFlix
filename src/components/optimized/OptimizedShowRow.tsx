@@ -61,31 +61,14 @@ export default function OptimizedShowRow({ query = "" }: Props) {
       slideGap="md"
       withControls
       controlSize={40}
-      nextControlIcon={<IconChevronRight size={32} />}
-      previousControlIcon={<IconChevronLeft size={32} />}
+      nextControlIcon={<IconChevronRight aria-label="Carousel Left" size={32} />}
+      previousControlIcon={<IconChevronLeft aria-label="Carousel Right" size={32} />}
       styles={{
         controls: {
           top: "50%",
           transform: "translateY(-50%)",
           transition: "opacity 150ms ease",
           zIndex: 2,
-        },
-
-        control: {
-          backgroundColor: "transparent",
-          border: "none",
-          boxShadow: "none",
-          color: "#fff",
-
-          "&[data-inactive]": {
-            opacity: 0,
-            pointerEvents: "none",
-          },
-
-          "&:hover": {
-            backgroundColor: "transparent",
-            color: "#8A2BE2", // KS accent
-          },
         },
 
         indicator: {
