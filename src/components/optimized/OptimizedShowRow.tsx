@@ -25,13 +25,16 @@ export default function OptimizedShowRow({ query = "" }: Props) {
   const debouncedQuery = useDebouncedValue(query, 300);
 
   useEffect(() => {
-    console.count("[Optimized API Calls -> OptimizedShowRow] Fetching shows");
+    const start = performance.now();
+    console.log("[API] Fetch started");
 
     fetch(
       `${tmdbConfig.baseUrl}/trending/movie/week?api_key=${tmdbConfig.apiKey}`,
     )
       .then((res) => res.json())
       .then((data) => {
+        const end = performance.now();
+        console.log(`[API] Fetch completed in ${(end - start).toFixed(2)}ms`);
         const mapped: Show[] = data.results.map((m: any) => ({
           id: m.id,
           title: m.title,

@@ -44,7 +44,7 @@ Applies targeted optimization strategies:
 - Controlled rendering
 - Smooth typing and scrolling experience
 
-You can switch between implementations without changing imports, making performance differences easy to observe and explain during demos or interviews.
+You can switch via configuration (toggle provided for visibility).
 
 📖 A detailed breakdown is available in  
 [`docs/performance.md`](./docs/performance.md)
@@ -91,16 +91,37 @@ This project was built to:
 -Understand real-world React performance issues
 -Practice optimization techniques used in production apps
 -Create a portfolio project beyond basic CRUD demos
-Confidently explain performance tradeoffs in interviews
 
 MirageFlix focuses on intentional slowness first, followed by measured optimizations, mirroring how performance problems are identified and solved in real applications.
 
+### 🔍 Viewing Performance in React Profiler
+
+MirageFlix can be analyzed using the React DevTools Profiler to visually observe render performance differences between the baseline and optimized implementations.
+
+Steps:
+
+1. Install React Developer Tools (Chrome / Edge).
+2. Open the app in the browser.
+3. Open DevTools → Profiler tab.
+4. Click Record.
+5. Interact with the app:
+   - Type in the search bar
+   - Switch between Slow and Optimized modes
+6. Stop recording to inspect results.
+
+What to observe:
+
+- Number of render commits
+- Render duration of ShowRow
+- Clear contrast between slow and optimized behavior
+
+> Note: React Profiler measures render performance, not API/network time.
+
 ## Future Improvements
 
--Virtualized rows for extremely large datasets
--Server-side pagination
--Image loading and caching optimizations
--Performance metrics and benchmarks
+- Virtualized rows for extremely large datasets
+- Server-side pagination
+- Image loading and caching optimizations
 
 ## 👤 Author
 

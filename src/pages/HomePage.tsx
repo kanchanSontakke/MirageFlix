@@ -2,19 +2,20 @@ import { useState } from "react";
 import { AppShell, Container, Stack, Title } from "@mantine/core";
 import AppHeader from "../components/shared/Header";
 import HeroBanner from "../components/shared/HeroBanner";
-import { performanceConfig } from "../config/performance";
 import SlowShowRow from "../components/slow/SlowShowRow";
 import OptimizedShowRow from "../components/optimized/OptimizedShowRow";
+import type { PerformanceMode } from "../config/performance";
 
 export default function HomePage() {
+  const [mode, setMode] = useState<PerformanceMode>("slow");
   const [query, setQuery] = useState("");
 
-  const ShowRowComponent =
-    performanceConfig.mode === "slow" ? SlowShowRow : OptimizedShowRow;
+  const ShowRowComponent = mode === "slow" ? SlowShowRow : OptimizedShowRow;
+
   return (
     <AppShell header={{ height: 64 }} padding={0}>
       <AppShell.Header className="border-b border-white/5 bg-black/80 backdrop-blur">
-        <AppHeader />
+        <AppHeader mode={mode} onModeChange={setMode} />
       </AppShell.Header>
 
       <AppShell.Main className="bg-black min-h-screen">
@@ -33,21 +34,39 @@ export default function HomePage() {
 
             {/* Rows */}
             <section aria-labelledby="trending-title">
-              <Title id="trending-title" order={2} size="h4" aria-description="Trending Now Shows" my="sm">
+              <Title
+                id="trending-title"
+                order={2}
+                size="h4"
+                aria-description="Trending Now Shows"
+                my="sm"
+              >
                 Trending Now
               </Title>
               <ShowRowComponent query={query} />
             </section>
 
             <section aria-labelledby="trending-title">
-              <Title id="trending-title" order={2} size="h4" aria-description="Popular Shows" my="sm">
+              <Title
+                id="trending-title"
+                order={2}
+                size="h4"
+                aria-description="Popular Shows"
+                my="sm"
+              >
                 Popular
               </Title>
               <ShowRowComponent />
             </section>
 
             <section aria-labelledby="trending-title">
-              <Title id="trending-title" order={2} size="h4" aria-description="Recommended Shows" my="sm">
+              <Title
+                id="trending-title"
+                order={2}
+                size="h4"
+                aria-description="Recommended Shows"
+                my="sm"
+              >
                 Recommended
               </Title>
               <ShowRowComponent />
