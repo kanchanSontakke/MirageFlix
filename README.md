@@ -109,12 +109,6 @@ Steps:
    - Switch between Slow and Optimized modes
 6. Stop recording to inspect results.
 
-What to observe:
-
-- Number of render commits
-- Render duration of ShowRow
-- Clear contrast between slow and optimized behavior
-
 > Note: React Profiler measures render performance, not API/network time.
 
 ## Future Improvements
