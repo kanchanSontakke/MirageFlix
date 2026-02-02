@@ -33,7 +33,6 @@ This separation allows:
 
 - Easy comparison
 - Clean mental models
-- Zero import juggling during demos
 
 ---
 
@@ -77,25 +76,32 @@ User Impact
 This mirrors what happens in many production apps before optimization.
 
 ### 4.1 Debounced Input Handling
+
 #### Problem
+
 Filtering large datasets synchronously on every keystroke causes:
+
 - Excessive computations
 - Unnecessary re-renders
 - Input lag under load
+
 #### Solution
+
 Instead of reacting to every keystroke immediately, the optimized version
 uses **debounced input handling**.
+
 ```ts
 const debouncedQuery = useDebouncedValue(query, 300);
 ```
 
 This ensures filtering logic runs only after the user pauses typing.
 Benefits
+
 - Dramatically fewer filtering executions
 - Predictable performance behavior
 - Smooth typing experience
 - Clear separation between user intent and computationThis ensures filtering logic runs only after the user pauses typing.
-Benefits
+  Benefits
 - Dramatically fewer filtering executions
 - Predictable performance behavior
 - Smooth typing experience
@@ -194,4 +200,15 @@ The emphasis is on:
 
 - Understanding performance tradeoffs
 - Writing explainable optimizations
-- Building intuition for responsive UI design
+- Building intuition for responsive UI
+
+## 📎 React Profiler Reference
+
+The screenshot below shows a sample recording from **React DevTools Profiler** while interacting with MirageFlix.
+
+![React Profiler Example](./images/react-profiler-example.png)
+
+> **Notes:**
+> Profiler measurements vary based on interaction patterns, environment, and timing.
+
+**The optimization doesn’t change network cost — it reduces unnecessary renders and computations.**
